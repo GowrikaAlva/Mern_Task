@@ -1,0 +1,191 @@
+/* Container to center the form and set the overall background */
+.authContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  /* Updated gradient to match the image's background tones (purple/blue) */
+  background: linear-gradient(135deg, #4b3977 0%, #305786 100%);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Form styling - This is the light blue shape */
+.authForm {
+  /* Set light blue-to-darker blue gradient with some transparency */
+  background: linear-gradient(135deg, rgba(160, 210, 255, 0.3) 0%, rgba(55, 150, 255, 0.4) 100%);
+  padding: 3rem; /* Increase padding for a larger overall look */
+  /* Create the specific rounded corner from the image */
+  border-radius: 40px 180px 40px 40px; 
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Stronger shadow for depth */
+  width: 100%;
+  max-width: 450px; /* Slightly wider */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px); /* Add a slight blur effect */
+}
+
+/* Form title - Changed to white and capitalized/spacing to match image */
+.authTitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  font-size: 2.5rem; /* Larger font */
+  font-weight: 400; /* Less bold */
+  text-transform: uppercase;
+  letter-spacing: 5px; /* Spacing for "sign in" */
+}
+
+/* Input group wrapper */
+.inputGroup {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  /* In the image, the label is not visible, so we can hide or make it visually integrated */
+}
+
+/* Input labels - Hiding these as the input placeholder is used in the image */
+.label {
+  display: none; 
+}
+
+/* Inputs - Styled as rounded ovals with transparent fill and white border */
+.input {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  border: 2px solid #ffffff; /* White border */
+  border-radius: 30px; /* Highly rounded, oval shape */
+  font-size: 1rem;
+  background-color: transparent; /* Transparent background */
+  color: #ffffff; /* White text when typing */
+  transition: border-color 0.3s;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Light white placeholder text */
+}
+
+.input:focus {
+  outline: none;
+  border-color: #f7b42c; /* Focus color for contrast */
+  box-shadow: none;
+}
+
+/* Error messages */
+.error {
+  color: #ffcccc; /* Lighter error color for the dark background */
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  padding-left: 1.2rem;
+}
+
+/* --- New Footer/Misc Styles --- */
+
+/* Group for Remember Me and Forgot Password */
+.formFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem; /* Space before login button */
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.rememberMeGroup {
+  display: flex;
+  align-items: center;
+  /* Custom radio button styling */
+}
+
+.rememberMeGroup input[type="radio"] {
+  /* Hide default radio button */
+  display: none;
+}
+
+.rememberMeGroup label {
+  position: relative;
+  padding-left: 20px; /* Space for custom radio button */
+  cursor: pointer;
+  color: #ffffff;
+  /* Re-enable label display for 'Remember me' */
+  display: block; 
+}
+
+.rememberMeGroup label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.rememberMeGroup input[type="radio"]:checked + label::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.forgotPassword {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.forgotPassword:hover {
+  text-decoration: underline;
+}
+
+
+/* Submit button - Styled as a large black oval */
+.submitButton {
+  width: 100%;
+  padding: 1rem;
+  /* Black button color */
+  background: #232323; 
+  color: #ffffff;
+  border: none;
+  /* Highly rounded, oval shape */
+  border-radius: 30px; 
+  font-size: 1.25rem; /* Larger font */
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.submitButton:hover {
+  background: #3a3a3a;
+}
+
+/* Toggle text below form (like "Don't have an account?") */
+.toggleText {
+  text-align: center;
+  margin-top: 4rem; /* More space to push it to the bottom */
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+/* Toggle link */
+.toggleLink {
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: 400;
+}
+
+.toggleLink:hover {
+  color: #f7b42c;
+}
